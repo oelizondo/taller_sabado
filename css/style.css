@@ -1,0 +1,12 @@
+body {
+    padding: 50px;
+    margin: 0;
+}
+.selection-menu, h3, p {
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+    transition: 0.2s;
+}

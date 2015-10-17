@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Github API</title>
+    <link rel="stylesheet" href="bower_components/skeleton/css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="row">
+        <div class="five columns selection-menu" id="selection-menu">
+            <h3>Step 1: I'm looking for</h3> <h3 id="answer"> </h3>
+            <br>
+            <button class="step1">users</button> <button class="step1">orgs</button> <button class="step1">repos</button>
+            <div class="row hidden" id="step2">
+                <h3>Step 2: </h3> <h3 id="answer2"></h3>
+                <br>
+                <button class="step2">single user</button> <button class="step2">multiple users</button>
+            </div>
+            <div class="row hidden" id="step3">
+                <h3>Username / ID: </h3>
+                <div class="row hidden" id="single-user">
+                    <input type="text" placeholder="Username"><button class="submit">Submit</button>
+                </div>
+                <div class="row hidden" id="multiple-users">
+                    <input type="text" placeholder="Start since ID"><button class="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="seven columns">
+            <div class="row">
+                <h3 id="found">We found: </h3>
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src='js/main.js'></script>
+</body>
+</html>
