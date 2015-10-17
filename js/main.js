@@ -1,33 +1,32 @@
-function append_data(user){
-  $('#output').append('<p> username: ' + user.login + '</p> <br>' + '<p> email: ' + user.email + '</p> <br>' + '<p> url: ' + user.url + '</p> <br>' );
-}
-
-function github_user(data) {
-  this.login = data['login'];
-  this.email = data['email'];
-  this.url = data['url'];
-}
-
-function query_api (url) {
-  $.ajax({
-    url: url,
-    type: 'GET',
-    success: function(data) {
-        if( data instanceof Array ){
-          $.each(data, function(i, user){
-            recieved_user = new github_user(user);
-            append_data(user);
-          });
-        }
-        else {
-          recieved_user = new github_user(data);
-          append_data(recieved_user);
-      }
-    }
-  })
-}
-
 (function fetch_users(){
+  function append_data(user){
+  $('#output').append('<p> username: ' + user.login + '</p> <br>' + '<p> email: ' + user.email + '</p> <br>' + '<p> url: ' + user.url + '</p> <br>' );
+  }
+
+  function github_user(data) {
+    this.login = data['login'];
+    this.email = data['email'];
+    this.url = data['url'];
+  }
+
+  function query_api (url) {
+    $.ajax({
+      url: url,
+      type: 'GET',
+      success: function(data) {
+          if( data instanceof Array ){
+            $.each(data, function(i, user){
+              recieved_user = new github_user(user);
+              append_data(user);
+            });
+          }
+          else {
+            recieved_user = new github_user(data);
+            append_data(recieved_user);
+        }
+      }
+    })
+  }
   var url = 'https://api.github.com/';
 
   $('.step1').click(function(){

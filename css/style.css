@@ -10,3 +10,9 @@ body {
     display: none;
     transition: 0.2s;
 }
+
+.output {
+	height: 90vh;
+	max-height: 85vh;
+	overflow: scroll;
+}
